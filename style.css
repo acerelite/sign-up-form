@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "baybayin";
+  src: url("Assets/font/baybayindoctrina-webfont.woff2") format("woff2"),
+    url("Assets/font/baybayindoctrina-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  color: #eeeeeee3;
+}
+
+input,
+button {
+  font-family: inherit;
+  font-size: 100%;
+  color: rgb(5, 26, 41);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input {
+  width: 20rem;
+  height: 2rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  margin-right: 4rem;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+body > div:nth-child(1) {
+  flex: 3;
+  background-image: url("Assets/bg-img-KellySikkema.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+}
+
+body > div:nth-child(2) {
+  flex: 5;
+  padding: 2rem;
+  background-color: rgb(5, 26, 41);
+}
+
+.logo-container {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: min(200px, 20%);
+  padding: 1rem;
+}
+
+span:first-of-type {
+  font-size: 5rem;
+  color: #eeeeeec5;
+  font-family: "baybayin";
+}
+
+img {
+  height: 4rem;
+  width: auto;
+}
+
+.input-body {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+label {
+  font-size: 0.9rem;
+  line-height: 1.9rem;
+  display: block;
+}
+
+.login-screen {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-screen > div:nth-child(1) {
+  flex: 2;
+}
+.login-screen > div:nth-child(2) {
+  flex: 2;
+}
+.login-screen > div:nth-child(3) {
+  flex: 3;
+  padding-top: 50px;
+}
