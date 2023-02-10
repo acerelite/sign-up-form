@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Average&display=swap");
 @font-face {
   font-family: "baybayin";
   src: url("Assets/font/baybayindoctrina-webfont.woff2") format("woff2"),
@@ -7,29 +8,11 @@
 }
 
 * {
+  font-family: "Average", serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 1rem;
   color: #eeeeeee3;
-}
-
-input,
-button {
-  font-family: inherit;
-  font-size: 100%;
-  color: rgb(5, 26, 41);
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-input {
-  width: 20rem;
-  height: 2rem;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  margin-right: 4rem;
 }
 
 body {
@@ -39,6 +22,27 @@ body {
   flex-wrap: wrap;
 }
 
+input,
+button {
+  font-family: inherit;
+  font-size: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+input {
+  color: rgb(74, 0, 0);
+  width: 20rem;
+  height: 2rem;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid rgb(161, 161, 161);
+  border-radius: 0.5rem;
+}
+
+/* SIDE BANNER */
 body > div:nth-child(1) {
   flex: 3;
   background-image: url("Assets/bg-img-KellySikkema.jpg");
@@ -46,12 +50,6 @@ body > div:nth-child(1) {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 400px;
-}
-
-body > div:nth-child(2) {
-  flex: 5;
-  padding: 2rem;
-  background-color: rgb(5, 26, 41);
 }
 
 .logo-container {
@@ -64,7 +62,7 @@ body > div:nth-child(2) {
   padding: 1rem;
 }
 
-span:first-of-type {
+img + span {
   font-size: 5rem;
   color: #eeeeeec5;
   font-family: "baybayin";
@@ -75,14 +73,67 @@ img {
   width: auto;
 }
 
+/* FORM PAGE */
+body > div:nth-child(2) {
+  flex: 5;
+  background-color: rgb(3, 20, 32);
+  /* background: linear-gradient(rgb(5, 26, 41), rgb(28, 0, 0)); */
+}
+
+.login-screen {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-screen > div:nth-child(1) {
+  padding: 2em;
+}
+.login-screen > div:nth-child(2) {
+  flex: 1;
+}
+
+.login-screen > div:nth-child(3) {
+  padding: 2em;
+}
+
+p:first-of-type {
+  line-height: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+p + p {
+  font-size: 1.5rem;
+}
+
+/* FORM INPUT */
+
+.form-container {
+  padding: 2em;
+  background-color: white;
+}
+
 .input-body {
   display: flex;
   flex-flow: row wrap;
 }
 
+h2,
 label {
-  font-size: 0.9rem;
-  line-height: 1.9rem;
+  color: rgb(74, 0, 0);
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: 0.8rem;
+  line-height: 1.4rem;
   display: block;
 }
 
@@ -91,13 +142,70 @@ label {
   flex-direction: column;
 }
 
-.login-screen > div:nth-child(1) {
-  flex: 2;
+button {
+  margin-bottom: 2em;
+  color: rgb(74, 0, 0);
+  border-radius: 0.4rem;
+  height: 2rem;
+  width: 180px;
 }
-.login-screen > div:nth-child(2) {
-  flex: 2;
+
+input:focus {
+  border: none;
+  box-shadow: 5px 10px #888888;
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: rgba(164, 104, 69, 0.622);
+  box-shadow: 2px 2px 5px grey;
 }
-.login-screen > div:nth-child(3) {
-  flex: 3;
-  padding-top: 50px;
+
+input + span {
+  position: relative;
+  margin-right: 4rem;
+  display: inline-block;
+  text-align: center;
+}
+
+input:valid + span::after {
+  position: absolute;
+  top: -1.4rem;
+  font-size: 1.6rem;
+  content: "✔";
+  color: green;
+}
+
+input:valid {
+  border-color: rgba(0, 128, 0, 0.804);
+}
+
+
+
+input:invalid:not(:placeholder-shown) + span::after {
+  position: absolute;
+  top: 0.8rem;
+  left: -20rem;
+  font-size: 0.9rem;
+  content: "⚠️ invalid input";
+  color: red;
+}
+
+input:invalid:not(:placeholder-shown) {
+  border: red 2px solid;
+}
+
+
+input:hover,
+button:hover {
+  border: inset 10px 10px red;
+  box-shadow: inset 0 0 10px rgba(33, 4, 4, 0.174);
+}
+
+button:hover {
+  box-shadow: 0 0 20px rgb(247, 247, 247);
+}
+
+button:active {
+  position: relative;
+  top: 2px;
+  left: 1px;
 }
